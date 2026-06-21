@@ -95,8 +95,6 @@ on property:twrp.decrypt.done=true
 
 on boot
   #  install_keyring
-    start boot-hal-1-2
-    start health-hal-2-1
     start keymaster-4-0
     start gatekeeper-1-0
     start mobicore
