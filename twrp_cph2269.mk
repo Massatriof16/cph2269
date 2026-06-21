@@ -13,13 +13,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from device makefile
-$(call inherit-product, device/OPPO/cph2269/device.mk)
+$(call inherit-product, device/oppo/cph2269/device.mk)
 
 PRODUCT_DEVICE := cph2269
 PRODUCT_NAME := twrp_cph2269
-PRODUCT_BRAND := OPPO
+PRODUCT_BRAND := oppo
 PRODUCT_MODEL := CPH2269
-PRODUCT_MANUFACTURER := OPPO
+PRODUCT_MANUFACTURER := oppo
 
 PRODUCT_GMS_CLIENTID_BASE := android-OPPO
 
