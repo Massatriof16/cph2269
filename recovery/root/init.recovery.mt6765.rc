@@ -66,8 +66,10 @@ service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
     disabled
     seclabel u:r:recovery:s0
 
+service hal_cryptoeng_oppo /system/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
+    seclabel u:r:recovery:s0
 
-service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
+service mobicore /system/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
     -r /vendor/app/mcRegistry/020f0000000000000000000000000000.drbin \
     -r /vendor/app/mcRegistry/05120000000000000000000000000000.drbin \
     -r /vendor/app/mcRegistry/020b0000000000000000000000000000.drbin \
@@ -112,7 +114,8 @@ on property:twrp.decrypt.done=true
     stop gatekeeper-1-0
 
 on boot
-    install_keyring
+   # install_keyring
+   start hal_cryptoeng_oppo
     start keymaster-4-0
    start gatekeeper-1-0
     start mobicore
